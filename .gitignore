@@ -1,0 +1,9 @@
+## ignore these files
+*.DS_Store*
+*.csv*
+*/*.txt*
+*.rds*
+*/*.txt*
+*/*.RDS*
+*.rds*
+
