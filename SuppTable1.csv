@@ -1,0 +1,250 @@
+Sample,subject_id,Patient_group,Age,Gender,site,visit,History.of.Warts.as.Adults,Number of SCC prior to swab collection,Number of SCCIS prior to swab collection,Time since transplant at sampling timepoint (years),SCC_count,cancer_wart,SCC,Wart
+Met6123,H1,High-Risk SCC,84,M,Fh,tp_1,YES,17,3,NA,20,Wart and SCC present,Yes,Yes
+Met6125,H1,High-Risk SCC,84,M,Pc,tp_1,YES,17,3,NA,20,Wart and SCC present,Yes,Yes
+Met6124,H1,High-Risk SCC,84,M,Ac,tp_1,YES,17,3,NA,20,Wart and SCC present,Yes,Yes
+Met6126,H1,High-Risk SCC,84,M,Ct,tp_1,YES,17,3,NA,20,Wart and SCC present,Yes,Yes
+Met6127,H1,High-Risk SCC,86,M,Fh,tp_2,YES,19,4,NA,23,Wart and SCC present,Yes,Yes
+Met6128,H1,High-Risk SCC,86,M,Ac,tp_2,YES,19,4,NA,23,Wart and SCC present,Yes,Yes
+Met6129,H1,High-Risk SCC,86,M,Pc,tp_2,YES,19,4,NA,23,Wart and SCC present,Yes,Yes
+Met6130,H1,High-Risk SCC,86,M,Ct,tp_2,YES,19,4,NA,23,Wart and SCC present,Yes,Yes
+Met3592,T1,SOTR,74,M,Ct,one_visit,YES,13,8,11.0027397260274,21,Wart and SCC present,Yes,Yes
+Met3588,T1,SOTR,74,M,Fw,one_visit,YES,13,8,11.0027397260274,21,Wart and SCC present,Yes,Yes
+Met3591,T1,SOTR,74,M,Pc,one_visit,YES,13,8,11.0027397260274,21,Wart and SCC present,Yes,Yes
+Met3589,T1,SOTR,74,M,Um,one_visit,YES,13,8,11.0027397260274,21,Wart and SCC present,Yes,Yes
+Met3584,T1,SOTR,74,M,Fh,one_visit,YES,13,8,11.0027397260274,21,Wart and SCC present,Yes,Yes
+Met3587,T1,SOTR,74,M,Fw,one_visit,YES,13,8,11.0027397260274,21,Wart and SCC present,Yes,Yes
+Met3586,T1,SOTR,74,M,Ac,one_visit,YES,13,8,11.0027397260274,21,Wart and SCC present,Yes,Yes
+Met3585,T1,SOTR,74,M,Ac,one_visit,YES,13,8,11.0027397260274,21,Wart and SCC present,Yes,Yes
+Met3590,T1,SOTR,74,M,Pc,one_visit,YES,13,8,11.0027397260274,21,Wart and SCC present,Yes,Yes
+Met3653,H2,High-Risk SCC,79,M,Ac,one_visit,NO,4,4,NA,8,SCC present,Yes,No
+Met3660,H2,High-Risk SCC,79,M,Tw,one_visit,NO,4,4,NA,8,SCC present,Yes,No
+Met3658,H2,High-Risk SCC,79,M,Pc,one_visit,NO,4,4,NA,8,SCC present,Yes,No
+Met3657,H2,High-Risk SCC,79,M,Pc,one_visit,NO,4,4,NA,8,SCC present,Yes,No
+Met3656,H2,High-Risk SCC,79,M,Um,one_visit,NO,4,4,NA,8,SCC present,Yes,No
+Met3655,H2,High-Risk SCC,79,M,Fw,one_visit,NO,4,4,NA,8,SCC present,Yes,No
+Met3659,H2,High-Risk SCC,79,M,Tw,one_visit,NO,4,4,NA,8,SCC present,Yes,No
+Met3654,H2,High-Risk SCC,79,M,Fw,one_visit,NO,4,4,NA,8,SCC present,Yes,No
+Met3652,H2,High-Risk SCC,79,M,Ac,one_visit,NO,4,4,NA,8,SCC present,Yes,No
+Met3661,H2,High-Risk SCC,79,M,Ct,one_visit,NO,4,4,NA,8,SCC present,Yes,No
+Met3651,H2,High-Risk SCC,79,M,Fh,one_visit,NO,4,4,NA,8,SCC present,Yes,No
+Met3707,T2,SOTR,71,M,Ct,one_visit,YES,11,3,3.37808219178082,14,Wart and SCC present,Yes,Yes
+Met3706,T2,SOTR,71,M,Tw,one_visit,YES,11,3,3.37808219178082,14,Wart and SCC present,Yes,Yes
+Met3698,T2,SOTR,71,M,Ac,one_visit,YES,11,3,3.37808219178082,14,Wart and SCC present,Yes,Yes
+Met3703,T2,SOTR,71,M,Pc,one_visit,YES,11,3,3.37808219178082,14,Wart and SCC present,Yes,Yes
+Met3701,T2,SOTR,71,M,Fw,one_visit,YES,11,3,3.37808219178082,14,Wart and SCC present,Yes,Yes
+Met3702,T2,SOTR,71,M,Um,one_visit,YES,11,3,3.37808219178082,14,Wart and SCC present,Yes,Yes
+Met3705,T2,SOTR,71,M,Tw,one_visit,YES,11,3,3.37808219178082,14,Wart and SCC present,Yes,Yes
+Met3699,T2,SOTR,71,M,Ac,one_visit,YES,11,3,3.37808219178082,14,Wart and SCC present,Yes,Yes
+Met3697,T2,SOTR,71,M,Fh,one_visit,YES,11,3,3.37808219178082,14,Wart and SCC present,Yes,Yes
+Met3704,T2,SOTR,71,M,Pc,one_visit,YES,11,3,3.37808219178082,14,Wart and SCC present,Yes,Yes
+Met3700,T2,SOTR,71,M,Fw,one_visit,YES,11,3,3.37808219178082,14,Wart and SCC present,Yes,Yes
+Met3672,H3,High-Risk SCC,75,F,Tw,tp_1,YES,2,1,NA,3,Wart and SCC present,Yes,Yes
+Met3668,H3,High-Risk SCC,75,F,Um,tp_1,YES,2,1,NA,3,Wart and SCC present,Yes,Yes
+Met3673,H3,High-Risk SCC,75,F,Ct,tp_1,YES,2,1,NA,3,Wart and SCC present,Yes,Yes
+Met3663,H3,High-Risk SCC,75,F,Fh,tp_1,YES,2,1,NA,3,Wart and SCC present,Yes,Yes
+Met3669,H3,High-Risk SCC,75,F,Pc,tp_1,YES,2,1,NA,3,Wart and SCC present,Yes,Yes
+Met3667,H3,High-Risk SCC,75,F,Fw,tp_1,YES,2,1,NA,3,Wart and SCC present,Yes,Yes
+Met3666,H3,High-Risk SCC,75,F,Fw,tp_1,YES,2,1,NA,3,Wart and SCC present,Yes,Yes
+Met3671,H3,High-Risk SCC,75,F,Tw,tp_1,YES,2,1,NA,3,Wart and SCC present,Yes,Yes
+Met3670,H3,High-Risk SCC,75,F,Pc,tp_1,YES,2,1,NA,3,Wart and SCC present,Yes,Yes
+Met3664,H3,High-Risk SCC,75,F,Ac,tp_1,YES,2,1,NA,3,Wart and SCC present,Yes,Yes
+Met3665,H3,High-Risk SCC,75,F,Ac,tp_1,YES,2,1,NA,3,Wart and SCC present,Yes,Yes
+Met6134,H3,High-Risk SCC,78,F,Ct,tp_2,YES,3,1,NA,4,Wart and SCC present,Yes,Yes
+Met6133,H3,High-Risk SCC,78,F,Pc,tp_2,YES,3,1,NA,4,Wart and SCC present,Yes,Yes
+Met6132,H3,High-Risk SCC,78,F,Ac,tp_2,YES,3,1,NA,4,Wart and SCC present,Yes,Yes
+Met6131,H3,High-Risk SCC,78,F,Fh,tp_2,YES,3,1,NA,4,Wart and SCC present,Yes,Yes
+Met3726,T3,SOTR,54,M,Pc,one_visit,YES,2,16,8.19178082191781,18,Wart and SCC present,Yes,Yes
+Met3722,T3,SOTR,54,M,Ac,one_visit,YES,2,16,8.19178082191781,18,Wart and SCC present,Yes,Yes
+Met3720,T3,SOTR,54,M,Fh,one_visit,YES,2,16,8.19178082191781,18,Wart and SCC present,Yes,Yes
+Met3729,T3,SOTR,54,M,Tw,one_visit,YES,2,16,8.19178082191781,18,Wart and SCC present,Yes,Yes
+Met3730,T3,SOTR,54,M,Ct,one_visit,YES,2,16,8.19178082191781,18,Wart and SCC present,Yes,Yes
+Met3727,T3,SOTR,54,M,Pc,one_visit,YES,2,16,8.19178082191781,18,Wart and SCC present,Yes,Yes
+Met3723,T3,SOTR,54,M,Fw,one_visit,YES,2,16,8.19178082191781,18,Wart and SCC present,Yes,Yes
+Met3724,T3,SOTR,54,M,Fw,one_visit,YES,2,16,8.19178082191781,18,Wart and SCC present,Yes,Yes
+Met3728,T3,SOTR,54,M,Tw,one_visit,YES,2,16,8.19178082191781,18,Wart and SCC present,Yes,Yes
+Met3725,T3,SOTR,54,M,Um,one_visit,YES,2,16,8.19178082191781,18,Wart and SCC present,Yes,Yes
+Met3721,T3,SOTR,54,M,Ac,one_visit,YES,2,16,8.19178082191781,18,Wart and SCC present,Yes,Yes
+Met3613,T4,SOTR,69,M,Tw,one_visit,YES,6,3,53.6520547945205,9,Wart and SCC present,Yes,Yes
+Met3611,T4,SOTR,69,M,Pc,one_visit,YES,6,3,53.6520547945205,9,Wart and SCC present,Yes,Yes
+Met3606,T4,SOTR,69,M,Ac,one_visit,YES,6,3,53.6520547945205,9,Wart and SCC present,Yes,Yes
+Met3609,T4,SOTR,69,M,Fw,one_visit,YES,6,3,53.6520547945205,9,Wart and SCC present,Yes,Yes
+Met3615,T4,SOTR,69,M,Ct,one_visit,YES,6,3,53.6520547945205,9,Wart and SCC present,Yes,Yes
+Met3614,T4,SOTR,69,M,Tw,one_visit,YES,6,3,53.6520547945205,9,Wart and SCC present,Yes,Yes
+Met3607,T4,SOTR,69,M,Ac,one_visit,YES,6,3,53.6520547945205,9,Wart and SCC present,Yes,Yes
+Met3605,T4,SOTR,69,M,Fh,one_visit,YES,6,3,53.6520547945205,9,Wart and SCC present,Yes,Yes
+Met3608,T4,SOTR,69,M,Fw,one_visit,YES,6,3,53.6520547945205,9,Wart and SCC present,Yes,Yes
+Met3612,T4,SOTR,69,M,Pc,one_visit,YES,6,3,53.6520547945205,9,Wart and SCC present,Yes,Yes
+Met3610,T4,SOTR,69,M,Um,one_visit,YES,6,3,53.6520547945205,9,Wart and SCC present,Yes,Yes
+Met3599,T5,SOTR,78,M,Um,tp_1,NO,4,4,4.06575342465753,8,SCC present,Yes,No
+Met3603,T5,SOTR,78,M,Tw,tp_1,NO,4,4,4.06575342465753,8,SCC present,Yes,No
+Met3602,T5,SOTR,78,M,Tw,tp_1,NO,4,4,4.06575342465753,8,SCC present,Yes,No
+Met3597,T5,SOTR,78,M,Fw,tp_1,NO,4,4,4.06575342465753,8,SCC present,Yes,No
+Met3604,T5,SOTR,78,M,Ct,tp_1,NO,4,4,4.06575342465753,8,SCC present,Yes,No
+Met3594,T5,SOTR,78,M,Fh,tp_1,NO,4,4,4.06575342465753,8,SCC present,Yes,No
+Met3600,T5,SOTR,78,M,Pc,tp_1,NO,4,4,4.06575342465753,8,SCC present,Yes,No
+Met3601,T5,SOTR,78,M,Pc,tp_1,NO,4,4,4.06575342465753,8,SCC present,Yes,No
+Met3595,T5,SOTR,78,M,Ac,tp_1,NO,4,4,4.06575342465753,8,SCC present,Yes,No
+Met3598,T5,SOTR,78,M,Fw,tp_1,NO,4,4,4.06575342465753,8,SCC present,Yes,No
+Met3596,T5,SOTR,78,M,Ac,tp_1,NO,4,4,4.06575342465753,8,SCC present,Yes,No
+Met6138,T5,SOTR,81,M,Ct,tp_2,NO,14,13,6.52328767123288,27,SCC present,Yes,No
+Met6137,T5,SOTR,81,M,Pc,tp_2,NO,14,13,6.52328767123288,27,SCC present,Yes,No
+Met6136,T5,SOTR,81,M,Ac,tp_2,NO,14,13,6.52328767123288,27,SCC present,Yes,No
+Met6135,T5,SOTR,81,M,Fh,tp_2,NO,14,13,6.52328767123288,27,SCC present,Yes,No
+Met3683,H4,High-Risk SCC,91,M,Tw,one_visit,NO,11,8,NA,19,SCC present,Yes,No
+Met3676,H4,High-Risk SCC,91,M,Ac,one_visit,NO,11,8,NA,19,SCC present,Yes,No
+Met3684,H4,High-Risk SCC,91,M,Ct,one_visit,NO,11,8,NA,19,SCC present,Yes,No
+Met3679,H4,High-Risk SCC,91,M,Um,one_visit,NO,11,8,NA,19,SCC present,Yes,No
+Met3677,H4,High-Risk SCC,91,M,Fw,one_visit,NO,11,8,NA,19,SCC present,Yes,No
+Met3675,H4,High-Risk SCC,91,M,Ac,one_visit,NO,11,8,NA,19,SCC present,Yes,No
+Met3678,H4,High-Risk SCC,91,M,Fw,one_visit,NO,11,8,NA,19,SCC present,Yes,No
+Met3674,H4,High-Risk SCC,91,M,Fh,one_visit,NO,11,8,NA,19,SCC present,Yes,No
+Met3681,H4,High-Risk SCC,91,M,Pc,one_visit,NO,11,8,NA,19,SCC present,Yes,No
+Met3682,H4,High-Risk SCC,91,M,Tw,one_visit,NO,11,8,NA,19,SCC present,Yes,No
+Met3680,H4,High-Risk SCC,91,M,Pc,one_visit,NO,11,8,NA,19,SCC present,Yes,No
+Met6094,T6,SOTR,52,M,Ct,one_visit,YES,0,0,9.36438356164384,0,Wart present,No,Yes
+Met6093,T6,SOTR,52,M,Pc,one_visit,YES,0,0,9.36438356164384,0,Wart present,No,Yes
+Met6092,T6,SOTR,52,M,Ac,one_visit,YES,0,0,9.36438356164384,0,Wart present,No,Yes
+Met6091,T6,SOTR,52,M,Fh,one_visit,YES,0,0,9.36438356164384,0,Wart present,No,Yes
+Met3717,T7,SOTR,74,M,Tw,one_visit,YES,1,1,3.4027397260274,2,Wart and SCC present,Yes,Yes
+Met3711,T7,SOTR,74,M,Ac,one_visit,YES,1,1,3.4027397260274,2,Wart and SCC present,Yes,Yes
+Met3716,T7,SOTR,74,M,Pc,one_visit,YES,1,1,3.4027397260274,2,Wart and SCC present,Yes,Yes
+Met3715,T7,SOTR,74,M,Pc,one_visit,YES,1,1,3.4027397260274,2,Wart and SCC present,Yes,Yes
+Met3719,T7,SOTR,74,M,Ct,one_visit,YES,1,1,3.4027397260274,2,Wart and SCC present,Yes,Yes
+Met3712,T7,SOTR,74,M,Fw,one_visit,YES,1,1,3.4027397260274,2,Wart and SCC present,Yes,Yes
+Met3713,T7,SOTR,74,M,Fw,one_visit,YES,1,1,3.4027397260274,2,Wart and SCC present,Yes,Yes
+Met3718,T7,SOTR,74,M,Tw,one_visit,YES,1,1,3.4027397260274,2,Wart and SCC present,Yes,Yes
+Met3714,T7,SOTR,74,M,Um,one_visit,YES,1,1,3.4027397260274,2,Wart and SCC present,Yes,Yes
+Met3709,T7,SOTR,74,M,Fh,one_visit,YES,1,1,3.4027397260274,2,Wart and SCC present,Yes,Yes
+Met3710,T7,SOTR,74,M,Ac,one_visit,YES,1,1,3.4027397260274,2,Wart and SCC present,Yes,Yes
+Met3617,T8,SOTR,35,M,Fh,one_visit,YES,0,0,3.83013698630137,0,Wart present,No,Yes
+Met3618,T8,SOTR,35,M,Ac,one_visit,YES,0,0,3.83013698630137,0,Wart present,No,Yes
+Met3624,T8,SOTR,35,M,Pc,one_visit,YES,0,0,3.83013698630137,0,Wart present,No,Yes
+Met3627,T8,SOTR,35,M,Ct,one_visit,YES,0,0,3.83013698630137,0,Wart present,No,Yes
+Met3622,T8,SOTR,35,M,Um,one_visit,YES,0,0,3.83013698630137,0,Wart present,No,Yes
+Met3625,T8,SOTR,35,M,Tw,one_visit,YES,0,0,3.83013698630137,0,Wart present,No,Yes
+Met3621,T8,SOTR,35,M,Fw,one_visit,YES,0,0,3.83013698630137,0,Wart present,No,Yes
+Met3619,T8,SOTR,35,M,Ac,one_visit,YES,0,0,3.83013698630137,0,Wart present,No,Yes
+Met3620,T8,SOTR,35,M,Fw,one_visit,YES,0,0,3.83013698630137,0,Wart present,No,Yes
+Met3623,T8,SOTR,35,M,Pc,one_visit,YES,0,0,3.83013698630137,0,Wart present,No,Yes
+Met3626,T8,SOTR,35,M,Tw,one_visit,YES,0,0,3.83013698630137,0,Wart present,No,Yes
+Met3635,T9,SOTR,54,M,Pc,one_visit,YES (Left wrist and 4th finger),0,0,1.97808219178082,0,Wart present,No,Yes
+Met3637,T9,SOTR,54,M,Tw,one_visit,YES (Left wrist and 4th finger),0,0,1.97808219178082,0,Wart present,No,Yes
+Met3630,T9,SOTR,54,M,Ac,one_visit,YES (Left wrist and 4th finger),0,0,1.97808219178082,0,Wart present,No,Yes
+Met3632,T9,SOTR,54,M,Fw,one_visit,YES (Left wrist and 4th finger),0,0,1.97808219178082,0,Wart present,No,Yes
+Met3636,T9,SOTR,54,M,Tw,one_visit,YES (Left wrist and 4th finger),0,0,1.97808219178082,0,Wart present,No,Yes
+Met3631,T9,SOTR,54,M,Fw,one_visit,YES (Left wrist and 4th finger),0,0,1.97808219178082,0,Wart present,No,Yes
+Met3629,T9,SOTR,54,M,Ac,one_visit,YES (Left wrist and 4th finger),0,0,1.97808219178082,0,Wart present,No,Yes
+Met3638,T9,SOTR,54,M,Ct,one_visit,YES (Left wrist and 4th finger),0,0,1.97808219178082,0,Wart present,No,Yes
+Met3633,T9,SOTR,54,M,Um,one_visit,YES (Left wrist and 4th finger),0,0,1.97808219178082,0,Wart present,No,Yes
+Met3628,T9,SOTR,54,M,Fh,one_visit,YES (Left wrist and 4th finger),0,0,1.97808219178082,0,Wart present,No,Yes
+Met3634,T9,SOTR,54,M,Pc,one_visit,YES (Left wrist and 4th finger),0,0,1.97808219178082,0,Wart present,No,Yes
+Met3772,T10,SOTR,49,M,Pc,tp_1,YES (Right dorsal hand and L calf),0,0,3.33972602739726,0,Wart present,No,Yes
+Met3773,T10,SOTR,49,M,Tw,tp_1,YES (Right dorsal hand and L calf),0,0,3.33972602739726,0,Wart present,No,Yes
+Met3766,T10,SOTR,49,M,Ac,tp_1,YES (Right dorsal hand and L calf),0,0,3.33972602739726,0,Wart present,No,Yes
+Met3775,T10,SOTR,49,M,Ct,tp_1,YES (Right dorsal hand and L calf),0,0,3.33972602739726,0,Wart present,No,Yes
+Met3771,T10,SOTR,49,M,Pc,tp_1,YES (Right dorsal hand and L calf),0,0,3.33972602739726,0,Wart present,No,Yes
+Met3774,T10,SOTR,49,M,Tw,tp_1,YES (Right dorsal hand and L calf),0,0,3.33972602739726,0,Wart present,No,Yes
+Met3765,T10,SOTR,49,M,Fh,tp_1,YES (Right dorsal hand and L calf),0,0,3.33972602739726,0,Wart present,No,Yes
+Met3770,T10,SOTR,49,M,Um,tp_1,YES (Right dorsal hand and L calf),0,0,3.33972602739726,0,Wart present,No,Yes
+Met3769,T10,SOTR,49,M,Fw,tp_1,YES (Right dorsal hand and L calf),0,0,3.33972602739726,0,Wart present,No,Yes
+Met3768,T10,SOTR,49,M,Fw,tp_1,YES (Right dorsal hand and L calf),0,0,3.33972602739726,0,Wart present,No,Yes
+Met3767,T10,SOTR,49,M,Ac,tp_1,YES (Right dorsal hand and L calf),0,0,3.33972602739726,0,Wart present,No,Yes
+Met6140,T10,SOTR,51,M,Ac,tp_2,YES (Right dorsal hand and L calf),0,0,5.33424657534247,0,Wart present,No,Yes
+Met6141,T10,SOTR,51,M,Pc,tp_2,YES (Right dorsal hand and L calf),0,0,5.33424657534247,0,Wart present,No,Yes
+Met6142,T10,SOTR,51,M,Ct,tp_2,YES (Right dorsal hand and L calf),0,0,5.33424657534247,0,Wart present,No,Yes
+Met6139,T10,SOTR,51,M,Fh,tp_2,YES (Right dorsal hand and L calf),0,0,5.33424657534247,0,Wart present,No,Yes
+Met3640,T11,SOTR,74,F,Fh,tp_1,YES (Right dorsal hand),0,0,5.40821917808219,0,Wart and SCC present,Yes,Yes
+Met3643,T11,SOTR,74,F,Fw,tp_1,YES (Right dorsal hand),0,0,5.40821917808219,0,Wart and SCC present,Yes,Yes
+Met3649,T11,SOTR,74,F,Tw,tp_1,YES (Right dorsal hand),0,0,5.40821917808219,0,Wart and SCC present,Yes,Yes
+Met3648,T11,SOTR,74,F,Tw,tp_1,YES (Right dorsal hand),0,0,5.40821917808219,0,Wart and SCC present,Yes,Yes
+Met3650,T11,SOTR,74,F,Ct,tp_1,YES (Right dorsal hand),0,0,5.40821917808219,0,Wart and SCC present,Yes,Yes
+Met3641,T11,SOTR,74,F,Ac,tp_1,YES (Right dorsal hand),0,0,5.40821917808219,0,Wart and SCC present,Yes,Yes
+Met3647,T11,SOTR,74,F,Pc,tp_1,YES (Right dorsal hand),0,0,5.40821917808219,0,Wart and SCC present,Yes,Yes
+Met3646,T11,SOTR,74,F,Pc,tp_1,YES (Right dorsal hand),0,0,5.40821917808219,0,Wart and SCC present,Yes,Yes
+Met3642,T11,SOTR,74,F,Ac,tp_1,YES (Right dorsal hand),0,0,5.40821917808219,0,Wart and SCC present,Yes,Yes
+Met3644,T11,SOTR,74,F,Fw,tp_1,YES (Right dorsal hand),0,0,5.40821917808219,0,Wart and SCC present,Yes,Yes
+Met3645,T11,SOTR,74,F,Um,tp_1,YES (Right dorsal hand),0,0,5.40821917808219,0,Wart and SCC present,Yes,Yes
+Met6146,T11,SOTR,76,F,Ct,tp_2,YES (Right dorsal hand),1,1,7.65479452054795,2,Wart and SCC present,Yes,Yes
+Met6144,T11,SOTR,76,F,Ac,tp_2,YES (Right dorsal hand),1,1,7.65479452054795,2,Wart and SCC present,Yes,Yes
+Met6143,T11,SOTR,76,F,Fh,tp_2,YES (Right dorsal hand),1,1,7.65479452054795,2,Wart and SCC present,Yes,Yes
+Met6145,T11,SOTR,76,F,Pc,tp_2,YES (Right dorsal hand),1,1,7.65479452054795,2,Wart and SCC present,Yes,Yes
+Met6074,T12,SOTR,71,M,Ct,tp_1,YES (Right cheek),0,1,2.38082191780822,1,Wart and SCC present,Yes,Yes
+Met6071,T12,SOTR,71,M,Fh,tp_1,YES (Right cheek),0,1,2.38082191780822,1,Wart and SCC present,Yes,Yes
+Met6073,T12,SOTR,71,M,Pc,tp_1,YES (Right cheek),0,1,2.38082191780822,1,Wart and SCC present,Yes,Yes
+Met6072,T12,SOTR,71,M,Ac,tp_1,YES (Right cheek),0,1,2.38082191780822,1,Wart and SCC present,Yes,Yes
+Met6075,T12,SOTR,73,M,Fh,tp_2,YES (Right cheek),0,2,4.47123287671233,2,Wart and SCC present,Yes,Yes
+Met6077,T12,SOTR,73,M,Pc,tp_2,YES (Right cheek),0,2,4.47123287671233,2,Wart and SCC present,Yes,Yes
+Met6076,T12,SOTR,73,M,Ac,tp_2,YES (Right cheek),0,2,4.47123287671233,2,Wart and SCC present,Yes,Yes
+Met6078,T12,SOTR,73,M,Ct,tp_2,YES (Right cheek),0,2,4.47123287671233,2,Wart and SCC present,Yes,Yes
+Met3741,H5,High-Risk SCC,63,F,Tw,one_visit,NO,5,2,NA,7,SCC present,Yes,No
+Met3736,H5,High-Risk SCC,63,F,Fw,one_visit,NO,5,2,NA,7,SCC present,Yes,No
+Met3735,H5,High-Risk SCC,63,F,Fw,one_visit,NO,5,2,NA,7,SCC present,Yes,No
+Met3734,H5,High-Risk SCC,63,F,Ac,one_visit,NO,5,2,NA,7,SCC present,Yes,No
+Met3737,H5,High-Risk SCC,63,F,Um,one_visit,NO,5,2,NA,7,SCC present,Yes,No
+Met3738,H5,High-Risk SCC,63,F,Pc,one_visit,NO,5,2,NA,7,SCC present,Yes,No
+Met3742,H5,High-Risk SCC,63,F,Ct,one_visit,NO,5,2,NA,7,SCC present,Yes,No
+Met3733,H5,High-Risk SCC,63,F,Ac,one_visit,NO,5,2,NA,7,SCC present,Yes,No
+Met3740,H5,High-Risk SCC,63,F,Tw,one_visit,NO,5,2,NA,7,SCC present,Yes,No
+Met3739,H5,High-Risk SCC,63,F,Pc,one_visit,NO,5,2,NA,7,SCC present,Yes,No
+Met3732,H5,High-Risk SCC,63,F,Fh,one_visit,NO,5,2,NA,7,SCC present,Yes,No
+Met3746,H6,High-Risk SCC,66,M,Fw,tp_1,NO,3,3,NA,6,SCC present,Yes,No
+Met3750,H6,High-Risk SCC,66,M,Pc,tp_1,NO,3,3,NA,6,SCC present,Yes,No
+Met3743,H6,High-Risk SCC,66,M,Fh,tp_1,NO,3,3,NA,6,SCC present,Yes,No
+Met3753,H6,High-Risk SCC,66,M,Ct,tp_1,NO,3,3,NA,6,SCC present,Yes,No
+Met3747,H6,High-Risk SCC,66,M,Fw,tp_1,NO,3,3,NA,6,SCC present,Yes,No
+Met3752,H6,High-Risk SCC,66,M,Tw,tp_1,NO,3,3,NA,6,SCC present,Yes,No
+Met3744,H6,High-Risk SCC,66,M,Ac,tp_1,NO,3,3,NA,6,SCC present,Yes,No
+Met3749,H6,High-Risk SCC,66,M,Pc,tp_1,NO,3,3,NA,6,SCC present,Yes,No
+Met3745,H6,High-Risk SCC,66,M,Ac,tp_1,NO,3,3,NA,6,SCC present,Yes,No
+Met3751,H6,High-Risk SCC,66,M,Tw,tp_1,NO,3,3,NA,6,SCC present,Yes,No
+Met3748,H6,High-Risk SCC,66,M,Um,tp_1,NO,3,3,NA,6,SCC present,Yes,No
+Met6099,H6,High-Risk SCC,68,M,Fh,tp_2,NO,3,7,NA,10,SCC present,Yes,No
+Met6102,H6,High-Risk SCC,68,M,Ct,tp_2,NO,3,7,NA,10,SCC present,Yes,No
+Met6101,H6,High-Risk SCC,68,M,Pc,tp_2,NO,3,7,NA,10,SCC present,Yes,No
+Met6100,H6,High-Risk SCC,68,M,Ac,tp_2,NO,3,7,NA,10,SCC present,Yes,No
+Met6109,L1,Low-Risk SCC,62,F,Pc,one_visit,NO,2,0,NA,2,SCC present,Yes,No
+Met6108,L1,Low-Risk SCC,62,F,Ac,one_visit,NO,2,0,NA,2,SCC present,Yes,No
+Met6107,L1,Low-Risk SCC,62,F,Fh,one_visit,NO,2,0,NA,2,SCC present,Yes,No
+Met6110,L1,Low-Risk SCC,62,F,Ct,one_visit,NO,2,0,NA,2,SCC present,Yes,No
+Met6058,T13,SOTR,68,M,Ac,one_visit,YES,0,2,4.73698630136986,2,Wart and SCC present,Yes,Yes
+Met6059,T13,SOTR,68,M,Pc,one_visit,YES,0,2,4.73698630136986,2,Wart and SCC present,Yes,Yes
+Met6060,T13,SOTR,68,M,Ct,one_visit,YES,0,2,4.73698630136986,2,Wart and SCC present,Yes,Yes
+Met6057,T13,SOTR,68,M,Fh,one_visit,YES,0,2,4.73698630136986,2,Wart and SCC present,Yes,Yes
+Met6084,T14,SOTR,60,F,Ac,one_visit,NO,13,15,24.7616438356164,28,SCC present,Yes,No
+Met6083,T14,SOTR,60,F,Fh,one_visit,NO,13,15,24.7616438356164,28,SCC present,Yes,No
+Met6085,T14,SOTR,60,F,Pc,one_visit,NO,13,15,24.7616438356164,28,SCC present,Yes,No
+Met6086,T14,SOTR,60,F,Ct,one_visit,NO,13,15,24.7616438356164,28,SCC present,Yes,No
+Met6064,T15,SOTR,65,M,Fh,one_visit,YES,4,2,6.37260273972603,6,Wart and SCC present,Yes,Yes
+Met6065,T15,SOTR,65,M,Ac,one_visit,YES,4,2,6.37260273972603,6,Wart and SCC present,Yes,Yes
+Met6066,T15,SOTR,65,M,Pc,one_visit,YES,4,2,6.37260273972603,6,Wart and SCC present,Yes,Yes
+Met6067,T15,SOTR,65,M,Ct,one_visit,YES,4,2,6.37260273972603,6,Wart and SCC present,Yes,Yes
+Met6118,L2,Low-Risk SCC,74,F,Ct,one_visit,NO,1,0,NA,1,SCC present,Yes,No
+Met6116,L2,Low-Risk SCC,74,F,Ac,one_visit,NO,1,0,NA,1,SCC present,Yes,No
+Met6117,L2,Low-Risk SCC,74,F,Pc,one_visit,NO,1,0,NA,1,SCC present,Yes,No
+Met6115,L2,Low-Risk SCC,74,F,Fh,one_visit,NO,1,0,NA,1,SCC present,Yes,No
+Met6105,L3,Low-Risk SCC,67,F,Pc,one_visit,NO,0,0,NA,0,NA,No,No
+Met6106,L3,Low-Risk SCC,67,F,Ct,one_visit,NO,0,0,NA,0,NA,No,No
+Met6104,L3,Low-Risk SCC,67,F,Ac,one_visit,NO,0,0,NA,0,NA,No,No
+Met6103,L3,Low-Risk SCC,67,F,Fh,one_visit,NO,0,0,NA,0,NA,No,No
+Met6063,L4,Low-Risk SCC,63,F,Ct,one_visit,NO,0,0,NA,0,NA,No,No
+Met6062,L4,Low-Risk SCC,63,F,Ac,one_visit,NO,0,0,NA,0,NA,No,No
+Met6061,L4,Low-Risk SCC,63,F,Fh,one_visit,NO,0,0,NA,0,NA,No,No
+Met6069,L5,Low-Risk SCC,59,F,Ac,one_visit,NO,0,0,NA,0,NA,No,No
+Met6070,L5,Low-Risk SCC,59,F,Ct,one_visit,NO,0,0,NA,0,NA,No,No
+Met6068,L5,Low-Risk SCC,59,F,Fh,one_visit,NO,0,0,NA,0,NA,No,No
+Met6120,L6,Low-Risk SCC,76,M,Ac,one_visit,NO,0,0,NA,0,NA,No,No
+Met6119,L6,Low-Risk SCC,76,M,Fh,one_visit,NO,0,0,NA,0,NA,No,No
+Met6121,L6,Low-Risk SCC,76,M,Pc,one_visit,NO,0,0,NA,0,NA,No,No
+Met6122,L6,Low-Risk SCC,76,M,Ct,one_visit,NO,0,0,NA,0,NA,No,No
+Met6097,L7,Low-Risk SCC,46,M,Pc,one_visit,NO,0,0,NA,0,NA,No,No
+Met6096,L7,Low-Risk SCC,46,M,Ac,one_visit,NO,0,0,NA,0,NA,No,No
+Met6095,L7,Low-Risk SCC,46,M,Fh,one_visit,NO,0,0,NA,0,NA,No,No
+Met6098,L7,Low-Risk SCC,46,M,Ct,one_visit,NO,0,0,NA,0,NA,No,No
+Met6090,L8,Low-Risk SCC,57,M,Ct,one_visit,NO,0,0,NA,0,NA,No,No
+Met6089,L8,Low-Risk SCC,57,M,Pc,one_visit,NO,0,0,NA,0,NA,No,No
+Met6087,L8,Low-Risk SCC,57,M,Fh,one_visit,NO,0,0,NA,0,NA,No,No
+Met6088,L8,Low-Risk SCC,57,M,Ac,one_visit,NO,0,0,NA,0,NA,No,No
+Met6079,L9,Low-Risk SCC,72,F,Fh,one_visit,NO,0,0,NA,0,NA,No,No
+Met6080,L9,Low-Risk SCC,72,F,Ac,one_visit,NO,0,0,NA,0,NA,No,No
+Met6082,L9,Low-Risk SCC,72,F,Ct,one_visit,NO,0,0,NA,0,NA,No,No
+Met6081,L9,Low-Risk SCC,72,F,Pc,one_visit,NO,0,0,NA,0,NA,No,No
