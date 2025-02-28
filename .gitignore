@@ -1,7 +1,12 @@
 ## ignore these files
 *.DS_Store*
+**.DS_Store*
 *.csv*
-*/*.txt*
-*/*.RDS*
+**.csv*
+*.txt*
+**.txt*
+*.RDS*
+**.RDS*
 *.rds*
+**.rds*
 
