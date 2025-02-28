@@ -2,8 +2,6 @@
 *.DS_Store*
 *.csv*
 */*.txt*
-*.rds*
-*/*.txt*
 */*.RDS*
 *.rds*
 
