@@ -9,4 +9,5 @@
 **.RDS*
 *.rds*
 **.rds*
-
+*.biom
+**.biom
