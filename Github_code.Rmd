@@ -32,7 +32,7 @@ library(Rtsne)
 library(scales, quietly = TRUE)
 library(SIAMCAT, quietly = TRUE)
 library(tidyr, quietly = TRUE)
-library(vegan, quietly = TRUE)
+# library(vegan, quietly = TRUE)
 ```
 
 
@@ -55,7 +55,7 @@ base_theme <- theme(
 This study analyzed a cohort of 30 subjects, comprising 15 SOTRs and 15 non-transplant subjects subdivided into Low-Risk (n=9) and High-Risk (n=6) subgroups based on cutaneous SCC history (Supplementary Table 1). The Low-Risk group included healthy subjects not on immunosuppressive medications and with two or fewer SCCs (including squamous cell carcinoma in situ [SCCIS]). In contrast, the High-Risk group consisted of non-immunocompromised subjects with more than two SCCs. The mean SCC count was highest in High-Risk subjects (11.8), followed by SOTRs (8.7), and Low-Risk subjects (0.33) (Supplementary Figure 1). The High-Risk group tended to be older, with a median age of 78.5 years compared to 63 years in the Low-Risk group and 68 years in the SOTRs. A positive correlation between age and SCC counts was observed (Supplementary Figure 1).
 
 ```{r}
-metadata <- read.csv("~/Desktop/Final_paper_vf/SuppTable1.csv", stringsAsFactors = FALSE)
+metadata <- read.csv("SuppTable1.csv", stringsAsFactors = FALSE)
 
 nrow(metadata) #number of samples
 unique(metadata$site) #Ct is control
@@ -100,10 +100,10 @@ plot_age_scc <- ggplot(metadata_indivsub, aes(x = Age, y = SCC_count, color = Pa
 plot_age_scc
 
 # Save the plot to a file
-ggsave(filename = "~/Desktop/Final_paper_vf/final_figures/suppfig1.png",
-  plot = plot_age_scc,
-  width = 8,
-  height = 4)
+ggsave(filename = "final_figures/suppfig1.png",
+plot = plot_age_scc,
+width = 8,
+height = 4)
 ```
 
 Refine kraken output
@@ -114,7 +114,7 @@ h5closeAll()
 var.name=c("20230806_standard++_0.5_bracken")
 
 # Import biom file from bracken generated via kraken-biom
-merged_metagenomes <- import_biom(paste0("~/Desktop/Final_paper_vf/outputs/",var.name,".biom",sep=""))
+merged_metagenomes <- import_biom(paste0("outputs/",var.name,".biom",sep=""))
 
 # Process OTU table: clean sample names and retain samples present in metadata
 otu.table <- merged_metagenomes@otu_table
@@ -145,7 +145,7 @@ physeq_orig <- physeq_orig %>%
   subset_samples(site != "Ct")
 
 # Save the phyloseq object
-saveRDS(physeq_orig, file.path("~/Desktop/Final_paper_vf", paste0(var.name, ".rds")))
+saveRDS(physeq_orig, file=paste0(var.name, ".rds"))
 
 ```
 
@@ -157,7 +157,7 @@ var.name <- "20230806_standard++_0.5_bracken"
 
 # Read in the phyloseq object, normalize counts, melt to long format,
 # filter out unwanted sites, and clean up column values
-physeq_df_orig <- readRDS(paste0("~/Desktop/Final_paper_vf/", var.name, ".rds")) %>%
+physeq_df_orig <- readRDS(paste0(var.name, ".rds")) %>%
  transform_sample_counts(function(x) x/sum(x)) %>%
  psmelt() %>%
  filter(!site %in% c("Tw", "Um", "Fw")) %>% #Don't have data for all subjects across these sites
@@ -339,7 +339,7 @@ final_plota
 ```{r}
 
 # Load data and preprocess
-ps <- readRDS(file.path("~/Desktop/Final_paper_vf", paste0(var.name, ".rds")))
+ps <- readRDS(paste0(var.name, ".rds"))
 
 taxa_abundance_table <- ps %>%
   tax_glom(taxrank = "Kingdom") %>%
@@ -375,7 +375,7 @@ finalb
 ```{r}
 
 fig1<-plot_grid(final_plota,NULL,finalb,nrow=3, rel_heights = c(0.73,0.02, 0.25),labels = c("A","","B"), label_size = 20)
-ggsave("~/Desktop/Final_paper_vf/final_figures/fig1.png",fig1, width=13, height=15)
+ggsave("final_figures/fig1.png",fig1, width=13, height=15)
 ```
 
 
@@ -416,7 +416,7 @@ suppfig2 <- taxa_abundance_table %>%
 
 suppfig2
 
-ggsave("~/Desktop/Final_paper_vf/final_figures/suppfig2.png",suppfig2, width=12, height=12)
+ggsave("final_figures/suppfig2.png",suppfig2, width=12, height=12)
 
 
 ```
@@ -436,7 +436,7 @@ physeq_list <- siamcat_list <- associations_list <- list()
 for (i in 1:2) {
   
   # 1. Read and subset phyloseq object
-  physeq <- readRDS(paste0("~/Desktop/Final_paper_vf/", var.name, ".rds"))
+  physeq <- readRDS(paste0(var.name, ".rds"))
   physeq <- subset_samples(physeq, (site %in% sites) & (Patient_group %in% immune_status_list[[i]]))
   
   # 2. Process taxonomy and OTU tables
@@ -448,7 +448,7 @@ for (i in 1:2) {
   colnames(otutable) <- rownames(tax_mat)
   
   # 3. Read and subset metadata
-  metadata <- read.csv("~/Desktop/Final_paper_vf/SuppTable1.csv", stringsAsFactors = FALSE)
+  metadata <- read.csv("SuppTable1.csv", stringsAsFactors = FALSE)
   selected_columns <- c("Sample", "Patient_group")
   metadata <- metadata[, colnames(metadata) %in% selected_columns]
   rownames(metadata) <- metadata$Sample
@@ -581,7 +581,7 @@ print(fig2a)
 Relative abundance of HPV and wart status
 ```{r}
 # Read phyloseq object
-ps <- readRDS(file.path("~/Desktop/Final_paper_vf", paste0(var.name, ".rds")))
+ps <- readRDS(paste0(var.name, ".rds"))
 
 # Aggregate data at the Family level and compute relative abundances
 physeq_rel <- ps %>%
@@ -637,11 +637,11 @@ HPV tree
 
 ```{r}
 
-heatmapData = readRDS("~/Desktop/Final_paper_vf/HPV_tree/met_hpv_git.RDS")
+heatmapData = readRDS("met_hpv_git.RDS")
 heatmapData$`Genome source`=factor(heatmapData$`Genome source`, levels=c("Low-Risk SCC", "High-Risk SCC", "SOTR", "NCBI"))
 table(heatmapData$`Genome source`)
 
-tree_trim <- read.tree("~/Desktop/Final_paper_vf/HPV_tree/trim.tree")
+tree_trim <- read.tree("HPV_tree/trim.tree")
 
 alpha=heatmapData$taxa[which(heatmapData$ScientificName=="Alphapapillomavirus")]
 alpha_val=getMRCA(tree_trim, tip=alpha) #191
@@ -689,7 +689,7 @@ fig2_2<-plot_grid(fig2c,NULL,p2, NULL, ncol=4, labels=c("B","", "C",""), rel_wid
 fig2<-plot_grid(fig2a2, NULL, fig2_2,nrow=3, rel_heights=c(0.45,0.03, 0.52), label_size = 20)
 fig2
 
-ggsave("~/Desktop/Final_paper_vf/final_figures/fig2.png",fig2,width=17,height=16)
+ggsave("final_figures/fig2.png",fig2,width=17,height=16)
 
 ```
 
@@ -706,7 +706,7 @@ taxa_level <- "Genus"
 n.colors <- 3
 
 # Load the phyloseq object and process the data
-physeq_orig <- readRDS(paste0("~/Desktop/Final_paper_vf/", var.name, ".rds"))
+physeq_orig <- readRDS(paste0(var.name, ".rds"))
 physeq_rel <- transform_sample_counts(physeq_orig, function(x) x / sum(x))
 physeq_df <- psmelt(physeq_rel)
 
@@ -757,7 +757,7 @@ suppfig3a <- ggplot(physeq_df, aes(x = subject_id, y = Abundance, fill = Genus))
 ##############################
 
 # Load the phyloseq object and process the data for viruses
-physeq_orig <- readRDS(paste0("~/Desktop/Final_paper_vf/", var.name, ".rds"))
+physeq_orig <- readRDS(paste0(var.name, ".rds"))
 physeq_rel <- transform_sample_counts(physeq_orig, function(x) x / sum(x))
 physeq_df <- physeq_rel %>%
   psmelt() %>%
@@ -795,7 +795,7 @@ plot_grid(
   align = "hv",           
   rel_widths = c(0.57, 0.02, 0.41)
 )
-ggsave("~/Desktop/Final_paper_vf/final_figures/suppfig3.png",width = 13, height=10)
+ggsave("final_figures/suppfig3.png",width = 13, height=10)
 
 ```
 
