@@ -33,6 +33,7 @@ library(scales, quietly = TRUE)
 library(SIAMCAT, quietly = TRUE)
 library(tidyr, quietly = TRUE)
 library(vegan, quietly = TRUE)
+rm(list=ls())
 ```
 
 
@@ -55,7 +56,7 @@ base_theme <- theme(
 This study analyzed a cohort of 30 subjects, comprising 15 SOTRs and 15 non-transplant subjects subdivided into Low-Risk (n=9) and High-Risk (n=6) subgroups based on cutaneous SCC history (Supplementary Table 1). The Low-Risk group included healthy subjects not on immunosuppressive medications and with two or fewer SCCs (including squamous cell carcinoma in situ [SCCIS]). In contrast, the High-Risk group consisted of non-immunocompromised subjects with more than two SCCs. The mean SCC count was highest in High-Risk subjects (11.8), followed by SOTRs (8.7), and Low-Risk subjects (0.33) (Supplementary Figure 1). The High-Risk group tended to be older, with a median age of 78.5 years compared to 63 years in the Low-Risk group and 68 years in the SOTRs. A positive correlation between age and SCC counts was observed (Supplementary Figure 1).
 
 ```{r}
-metadata <- read.csv("~/Desktop/Final_paper_vf/SuppTable1.csv", stringsAsFactors = FALSE)
+metadata <- read.csv("SuppTable1.csv", stringsAsFactors = FALSE)
 
 nrow(metadata) #number of samples
 unique(metadata$site) #Ct is control
@@ -75,10 +76,8 @@ print(summary_stats)
 ```
 
 
-Supp fig 1
-
+Figure 1
 ```{r}
-
 metadata_indivsub <- metadata %>%
   filter(visit %in% c("one_visit", "tp_2")) %>%  # only include one visit per person
   distinct(subject_id, Age, Patient_group, SCC_count)
@@ -95,26 +94,24 @@ plot_age_scc <- ggplot(metadata_indivsub, aes(x = Age, y = SCC_count, color = Pa
   ) + theme_bw() +
   base_theme +
   theme(legend.position = "right") +
-  scale_color_manual(values = c("Low-Risk SCC" = "#33a02c", "High-Risk SCC" = "#1f78b4", "SOTR" = "#e31a1c"))
+  scale_color_manual(values = c("Low-Risk SCC" = "#33a02c",
+                                "High-Risk SCC" = "#1f78b4",
+                                "SOTR" = "#e31a1c"))
 
 plot_age_scc
 
 # Save the plot to a file
-ggsave(filename = "~/Desktop/Final_paper_vf/final_figures/suppfig1.png",
-  plot = plot_age_scc,
-  width = 8,
-  height = 4)
+ggsave(filename = "final_figures/fig1.png", plot = plot_age_scc, width=8, height=4)
 ```
 
 Refine kraken output
 ```{r}
-
 h5closeAll()
 
 var.name=c("20230806_standard++_0.5_bracken")
 
 # Import biom file from bracken generated via kraken-biom
-merged_metagenomes <- import_biom(paste0("~/Desktop/Final_paper_vf/outputs/",var.name,".biom",sep=""))
+merged_metagenomes <- import_biom(paste0("outputs/",var.name,".biom",sep=""))
 
 # Process OTU table: clean sample names and retain samples present in metadata
 otu.table <- merged_metagenomes@otu_table
@@ -145,19 +142,17 @@ physeq_orig <- physeq_orig %>%
   subset_samples(site != "Ct")
 
 # Save the phyloseq object
-saveRDS(physeq_orig, file.path("~/Desktop/Final_paper_vf", paste0(var.name, ".rds")))
-
+saveRDS(physeq_orig, file.path(paste0(var.name, ".rds")))
 ```
 
-Figure 1
-
+Figure 2
 ```{r}
 # Define variables
 var.name <- "20230806_standard++_0.5_bracken"
 
 # Read in the phyloseq object, normalize counts, melt to long format,
 # filter out unwanted sites, and clean up column values
-physeq_df_orig <- readRDS(paste0("~/Desktop/Final_paper_vf/", var.name, ".rds")) %>%
+physeq_df_orig <- readRDS(paste0(var.name, ".rds")) %>%
  transform_sample_counts(function(x) x/sum(x)) %>%
  psmelt() %>%
  filter(!site %in% c("Tw", "Um", "Fw")) %>% #Don't have data for all subjects across these sites
@@ -333,13 +328,11 @@ final_plota <- plot_grid(
     draw_label("Relative Abundance", x = 0.01, y = 0.5, angle = 90, size = 18)) 
 
 final_plota
-
 ```
 
 ```{r}
-
 # Load data and preprocess
-ps <- readRDS(file.path("~/Desktop/Final_paper_vf", paste0(var.name, ".rds")))
+ps <- readRDS(paste0(var.name, ".rds"))
 
 taxa_abundance_table <- ps %>%
   tax_glom(taxrank = "Kingdom") %>%
@@ -369,21 +362,16 @@ finalb <- ggplot(taxa_abundance_table_limit, aes(x = site, y = Abundance)) +
   facet_grid(. ~ Kingdom)
 
 finalb
-
 ```
 
 ```{r}
-
-fig1<-plot_grid(final_plota,NULL,finalb,nrow=3, rel_heights = c(0.73,0.02, 0.25),labels = c("A","","B"), label_size = 20)
-ggsave("~/Desktop/Final_paper_vf/final_figures/fig1.png",fig1, width=13, height=15)
+fig2 <- plot_grid(final_plota, NULL, finalb, nrow=3, rel_heights = c(0.73,0.02, 0.25), labels = c("A","","B"), label_size = 20)
+ggsave("final_figures/fig2.png", fig2, width=13, height=15)
 ```
 
 
-Supp fig 2 - Full set of sites from fig 1b
-
+Supp fig 1 - Full set of sites from fig 2b
 ```{r}
-
-
 # Compare means by immune status within each Kingdom across all sites
 compare_means(Abundance ~ Patient_group, data = taxa_abundance_table, 
               group.by = "Kingdom", ref.group = "Low-Risk SCC",
@@ -391,7 +379,7 @@ compare_means(Abundance ~ Patient_group, data = taxa_abundance_table,
 
 comparisons=list(c("Low-Risk SCC", "SOTR"),c("Low-Risk SCC", "High-Risk SCC"),c("High-Risk SCC", "SOTR"))
 
-suppfig2 <- taxa_abundance_table %>%
+suppfig1 <- taxa_abundance_table %>%
   ggplot(aes(`Immune status`, Abundance, fill = `Immune status`)) +
   geom_boxplot(outlier.shape = NA) +
   geom_point(aes(color = `Immune status`), size = 1.75, 
@@ -414,18 +402,15 @@ suppfig2 <- taxa_abundance_table %>%
     legend.position="bottom"
   ) + guides(color = "none") + scale_y_continuous(expand = expansion(mult = c(0.05, 0.15)))
 
-suppfig2
+suppfig1
 
-ggsave("~/Desktop/Final_paper_vf/final_figures/suppfig2.png",suppfig2, width=12, height=12)
-
-
+ggsave("final_figures/suppfig1.png", suppfig1, width=12, height=12)
 ```
 
 
 
 
 ```{r}
-
 # Define parameters and initialize lists
 titles <- c("SOTR vs Low Risk", "High Risk vs Low Risk")
 sites <- c("Ac", "Pc")
@@ -436,7 +421,7 @@ physeq_list <- siamcat_list <- associations_list <- list()
 for (i in 1:2) {
   
   # 1. Read and subset phyloseq object
-  physeq <- readRDS(paste0("~/Desktop/Final_paper_vf/", var.name, ".rds"))
+  physeq <- readRDS(paste0(var.name, ".rds"))
   physeq <- subset_samples(physeq, (site %in% sites) & (Patient_group %in% immune_status_list[[i]]))
   
   # 2. Process taxonomy and OTU tables
@@ -448,7 +433,7 @@ for (i in 1:2) {
   colnames(otutable) <- rownames(tax_mat)
   
   # 3. Read and subset metadata
-  metadata <- read.csv("~/Desktop/Final_paper_vf/SuppTable1.csv", stringsAsFactors = FALSE)
+  metadata <- read.csv("SuppTable1.csv", stringsAsFactors = FALSE)
   selected_columns <- c("Sample", "Patient_group")
   metadata <- metadata[, colnames(metadata) %in% selected_columns]
   rownames(metadata) <- metadata$Sample
@@ -559,7 +544,7 @@ for (i in 1:2) {
   legend <- get_legend(relabd + theme(legend.position = "top"))
   legend <- plot_grid(legend, NA, ncol = 2)
   
-  variable_name <- paste("fig2a", i, sep = "_")
+  variable_name <- paste("fig3a", i, sep = "_")
   title_plot <- ggdraw() + draw_label(titles[i], size = 18)
   
   combined_plot <- plot_grid(title_plot,
@@ -572,16 +557,15 @@ for (i in 1:2) {
 }
 
 # Combine the two figures vertically
-fig2a <- plot_grid(fig2a_1, fig2a_2, nrow = 2, rel_heights = c(0.4, 0.6))
-print(fig2a)
-
+fig3a <- plot_grid(fig3a_1, fig3a_2, nrow = 2, rel_heights = c(0.4, 0.6))
+print(fig3a)
 ```
 
 
 Relative abundance of HPV and wart status
 ```{r}
 # Read phyloseq object
-ps <- readRDS(file.path("~/Desktop/Final_paper_vf", paste0(var.name, ".rds")))
+ps <- readRDS(file.path(paste0(var.name, ".rds")))
 
 # Aggregate data at the Family level and compute relative abundances
 physeq_rel <- ps %>%
@@ -612,7 +596,7 @@ average_abundance <- taxa_abundance_table %>%
 comparisons <- list(c("Warts not\npresent", "Warts present"))
 
 # Create the plot
-fig2c <- ggplot(average_abundance, aes(x = History.of.Warts.as.Adults, y = Abundance)) +
+fig3b <- ggplot(average_abundance, aes(x = History.of.Warts.as.Adults, y = Abundance)) +
   theme_bw() +
   geom_boxplot(outlier.shape = NA, alpha = 0.5) +
   base_theme +
@@ -626,8 +610,9 @@ fig2c <- ggplot(average_abundance, aes(x = History.of.Warts.as.Adults, y = Abund
 
 
 # Extract legend (if needed)
-legend2 <- plot_grid(get_legend(fig2c + guides(color = guide_legend(nrow = 1)) + theme(legend.position = "bottom")))
+legend2 <- plot_grid(get_legend(fig3b + guides(color = guide_legend(nrow = 1)) + theme(legend.position = "bottom")))
 
+fig3b
 ```
 
 
@@ -636,12 +621,11 @@ legend2 <- plot_grid(get_legend(fig2c + guides(color = guide_legend(nrow = 1)) +
 HPV tree
 
 ```{r}
-
-heatmapData = readRDS("~/Desktop/Final_paper_vf/HPV_tree/met_hpv_git.RDS")
+heatmapData = readRDS("HPV_tree/met_hpv_git.RDS")
 heatmapData$`Genome source`=factor(heatmapData$`Genome source`, levels=c("Low-Risk SCC", "High-Risk SCC", "SOTR", "NCBI"))
 table(heatmapData$`Genome source`)
 
-tree_trim <- read.tree("~/Desktop/Final_paper_vf/HPV_tree/trim.tree")
+tree_trim <- read.tree("HPV_tree/trim.tree")
 
 alpha=heatmapData$taxa[which(heatmapData$ScientificName=="Alphapapillomavirus")]
 alpha_val=getMRCA(tree_trim, tip=alpha) #191
@@ -672,33 +656,33 @@ p2 <- ggtree(tree_trim, layout='circular') %<+% heatmapData +
       legend.background = element_rect(fill = "white", color = NA)
           ) + guides(size = guide_legend(override.aes = list(size = 3)))
 
+p2
 ```
   
 
 
 ```{r}
-
 # fig2_2<-plot_grid(fig2a,NULL, fig2c,ncol=3, labels=c("","B"),rel_widths = c(0.75,0.02, 0.23), label_size = 20)
 # fig2_2<-plot_grid(fig2_2,legend2, nrow=2, labels=c("",""), rel_heights = c(0.9,0.1), label_size = 20)
 # fig2_2<-plot_grid(fig2_2,p2,nrow=2,labels=c("","C"), rel_heights = c(0.4,0.6), label_size = 20)
 # fig2_2
 
 
-fig2a2<-plot_grid(fig2a,legend2, nrow=2, labels=c("A",""), rel_heights = c(0.9,0.1), label_size = 20)
-fig2_2<-plot_grid(fig2c,NULL,p2, NULL, ncol=4, labels=c("B","", "C",""), rel_widths = c(0.28, 0.05,0.7,0.05), label_size = 20)
-fig2<-plot_grid(fig2a2, NULL, fig2_2,nrow=3, rel_heights=c(0.45,0.03, 0.52), label_size = 20)
-fig2
+fig3a2<-plot_grid(fig3a, legend2, nrow=2, labels=c("A",""), rel_heights = c(0.9,0.1), label_size = 20)
+fig3_2<-plot_grid(fig3b, NULL, p2, NULL, ncol=4, labels=c("B","", "C",""), rel_widths = c(0.28, 0.05,0.7,0.05), label_size = 20)
+fig3<-plot_grid(fig3a2, NULL, fig3_2,nrow=3, rel_heights=c(0.45,0.03, 0.52), label_size = 20)
+fig3
 
-ggsave("~/Desktop/Final_paper_vf/final_figures/fig2.png",fig2,width=17,height=16)
+ggsave("final_figures/fig3.png", fig3, width=17, height=16)
 
 ```
 
 
 
-Supfig3
+Suppfig2
 ```{r}
 #############################
-### Suppfig3a: Eukaryotes ###
+### Suppfig2a: Eukaryotes ###
 #############################
 
 # Define taxa level and number of colors for eukaryotic genera
@@ -706,7 +690,7 @@ taxa_level <- "Genus"
 n.colors <- 3
 
 # Load the phyloseq object and process the data
-physeq_orig <- readRDS(paste0("~/Desktop/Final_paper_vf/", var.name, ".rds"))
+physeq_orig <- readRDS(paste0(var.name, ".rds"))
 physeq_rel <- transform_sample_counts(physeq_orig, function(x) x / sum(x))
 physeq_df <- psmelt(physeq_rel)
 
@@ -741,7 +725,7 @@ genera_colors <- setNames(colors, c(top_genera[ which(top_genera != "Other") ], 
 physeq_df$subject_id = factor(physeq_df$subject_id , levels = c("H1", "H2", "H3", "H4", "H5", "H6", "L1", "L2", "L3", "L4", "L5", "L6", "L7", "L8", "L9", "T1", "T2","T3", "T4","T5", "T6", "T7", "T8", "T9", "T10", "T11", "T12", "T13", "T14", "T15"))
 
 # Create the faceted bar plot (one panel per Patient_group)
-suppfig3a <- ggplot(physeq_df, aes(x = subject_id, y = Abundance, fill = Genus)) +
+suppfig2a <- ggplot(physeq_df, aes(x = subject_id, y = Abundance, fill = Genus)) +
   geom_bar(stat = "identity", position = "fill") +
   scale_fill_manual(values = genera_colors, guide = guide_legend(nrow = 2)) +
   labs(
@@ -753,11 +737,11 @@ suppfig3a <- ggplot(physeq_df, aes(x = subject_id, y = Abundance, fill = Genus))
   base_theme
 
 ##############################
-### Suppfig3b: Viruses      ###
+### Suppfig2b: Viruses      ###
 ##############################
 
 # Load the phyloseq object and process the data for viruses
-physeq_orig <- readRDS(paste0("~/Desktop/Final_paper_vf/", var.name, ".rds"))
+physeq_orig <- readRDS(paste0(var.name, ".rds"))
 physeq_rel <- transform_sample_counts(physeq_orig, function(x) x / sum(x))
 physeq_df <- physeq_rel %>%
   psmelt() %>%
@@ -770,7 +754,7 @@ physeq_df <- physeq_rel %>%
   summarise(Abundance = mean(Abundance), .groups = 'drop')
 
 # Create the faceted scatter plot by virus Genus with significance comparisons
-suppfig3b <- ggplot(physeq_df, aes(x = Patient_group, y = Abundance, color = Patient_group)) +
+suppfig2b <- ggplot(physeq_df, aes(x = Patient_group, y = Abundance, color = Patient_group)) +
   geom_point(size = 1.75, position = position_dodge(width = 0.75)) +
   facet_wrap(~ Genus, nrow = 3) +
   stat_compare_means(
@@ -789,14 +773,11 @@ suppfig3b <- ggplot(physeq_df, aes(x = Patient_group, y = Abundance, color = Pat
 
 
 plot_grid(
-  suppfig3a+theme(legend.position="bottom"), NULL, suppfig3b+theme(legend.position="bottom"),
+  suppfig2a+theme(legend.position="bottom"), NULL, suppfig2b+theme(legend.position="bottom"),
   labels = c("A", "B"),
   ncol = 3,               
   align = "hv",           
   rel_widths = c(0.57, 0.02, 0.41)
 )
-ggsave("~/Desktop/Final_paper_vf/final_figures/suppfig3.png",width = 13, height=10)
-
+ggsave("final_figures/suppfig2.png",width = 13, height=10)
 ```
-
-
