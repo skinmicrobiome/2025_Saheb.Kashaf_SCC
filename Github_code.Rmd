@@ -104,46 +104,6 @@ plot_age_scc
 ggsave(filename = "final_figures/fig1.png", plot = plot_age_scc, width=8, height=4)
 ```
 
-Refine kraken output
-```{r}
-h5closeAll()
-
-var.name=c("20230806_standard++_0.5_bracken")
-
-# Import biom file from bracken generated via kraken-biom
-merged_metagenomes <- import_biom(paste0("outputs/",var.name,".biom",sep=""))
-
-# Process OTU table: clean sample names and retain samples present in metadata
-otu.table <- merged_metagenomes@otu_table
-colnames(otu.table) <- sub("\\..*", "", colnames(otu.table))
-otu.table <- otu.table[, intersect(colnames(otu.table), metadata$Sample)]
-otu.table <- otu_table(t(as.matrix(otu.table)), taxa_are_rows = FALSE)
-
-# Subset metadata to match OTU table and create sample_data object
-metadata_physeq <- metadata %>% 
-  filter(Sample %in% rownames(otu.table)) %>%
-  as.data.frame()
-metadata_physeq$Patient_group=factor(metadata_physeq$Patient_group, levels=c("Low-Risk SCC","High-Risk SCC","SOTR"))
-rownames(metadata_physeq) <- metadata_physeq$Sample
-samples <- sample_data(metadata_physeq)
-
-# Process taxonomy table: rename columns and add taxid
-taxmat <- as.data.frame(merged_metagenomes@tax_table) %>%
-  setNames(c("Kingdom", "Phylum", "Class", "Order", "Family", "Genus", "Species")) %>%
-  mutate(taxid = rownames(.))
-taxmat_matrix <- as.matrix(taxmat)
-
-# Create phyloseq object
-physeq_orig <- phyloseq(otu.table, tax_table(taxmat_matrix), samples)
-
-# Remove human reads (and unclassified genera) and control samples
-physeq_orig <- physeq_orig %>%
-  subset_taxa(Genus != "g__Homo" & Genus != "g__") %>%
-  subset_samples(site != "Ct")
-
-# Save the phyloseq object
-saveRDS(physeq_orig, file.path(paste0(var.name, ".rds")))
-```
 
 Figure 2
 ```{r}
